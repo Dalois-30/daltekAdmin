@@ -3,6 +3,9 @@ import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@a
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
+import { JwtHeaderInterceptor } from '../app/views/auth/interceptor/interceptor'
+import { ToastrModule } from "ngx-toastr";
 
 import {
   PERFECT_SCROLLBAR_CONFIG,
@@ -84,6 +87,7 @@ const APP_CONTAINERS = [
     ProgressModule,
     BadgeModule,
     ListGroupModule,
+    ToastrModule.forRoot(),
     CardModule,
   ],
   providers: [
@@ -94,6 +98,11 @@ const APP_CONTAINERS = [
     {
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG,
+    },
+    { 
+      provide: HTTP_INTERCEPTORS, 
+      useClass: JwtHeaderInterceptor, 
+      multi: true 
     },
     IconSetService,
     Title

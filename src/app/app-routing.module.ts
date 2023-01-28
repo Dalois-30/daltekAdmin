@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NoAuthGuard } from './views/auth/guard/no-auth.guard'
+import { AuthGuard } from './views/auth/guard/auth.guard'
 
 import { DefaultLayoutComponent } from './containers';
 
@@ -12,6 +14,7 @@ const routes: Routes = [
   {
     path: '',
     component: DefaultLayoutComponent,
+    canActivate: [AuthGuard],
     data: {
       title: 'Home'
     },
@@ -27,12 +30,12 @@ const routes: Routes = [
         loadChildren: () =>
           import('./views/widgets/widgets.module').then((m) => m.WidgetsModule)
       },
-      {
-        path: 'auth',
-        loadChildren: () =>
-          import('./views/auth/auth.module').then((m) => m.AuthModule)
-      },
     ]
+  },
+  {
+    path: 'login',
+    // canActivate: [NoAuthGuard],
+    loadChildren: () => import('./views/auth/auth.module').then(m => m.AuthModule)
   },
   {path: '**', redirectTo: 'dashboard'}
 ];
