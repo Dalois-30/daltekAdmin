@@ -12,13 +12,15 @@ import {
   NavModule,
   ProgressModule,
   TableModule,
-  TabsModule
+  TabsModule,
 } from '@coreui/angular';
 import { IconModule } from '@coreui/icons-angular';
 import { ChartjsModule } from '@coreui/angular-chartjs';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
+
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 import { WidgetsModule } from '../widgets/widgets.module';
 
@@ -40,7 +42,8 @@ import { WidgetsModule } from '../widgets/widgets.module';
     ChartjsModule,
     AvatarModule,
     TableModule,
-    WidgetsModule
+    WidgetsModule,
+    Ng2SmartTableModule
   ],
   declarations: [DashboardComponent]
 })

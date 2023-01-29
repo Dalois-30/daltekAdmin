@@ -9,12 +9,16 @@ import Swal from 'sweetalert2';
   providedIn: 'root'
 })
 export class NoAuthGuard implements CanActivate {
-  constructor(private authService: AuthService, public router: Router, private toast: ToastrService) {
-  }
+  constructor(
+    private _authService: AuthService,
+    private router: Router
+  ) { }
 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    if (this.authService.isAuthenticated()) return true;
-    this.router.navigate(['/login']);
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    if (!this._authService.isAuthenticated()) return true;
+    this.router.navigate(['/']);
     return false;
   }
 }

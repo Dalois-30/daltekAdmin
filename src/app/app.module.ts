@@ -81,6 +81,7 @@ const APP_CONTAINERS = [
     ButtonGroupModule,
     ReactiveFormsModule,
     SidebarModule,
+    HttpClientModule,
     SharedModule,
     TabsModule,
     ListGroupModule,

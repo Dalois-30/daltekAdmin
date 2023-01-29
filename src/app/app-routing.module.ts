@@ -30,6 +30,12 @@ const routes: Routes = [
         loadChildren: () =>
           import('./views/widgets/widgets.module').then((m) => m.WidgetsModule)
       },
+     
+      {
+        path: 'users',
+        loadChildren: () =>
+          import('./views/user/user.module').then((m) => m.UserModule)
+      },
     ]
   },
   {
@@ -42,12 +48,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, {
-      scrollPositionRestoration: 'top',
-      anchorScrolling: 'enabled',
-      initialNavigation: 'enabledBlocking'
-      // relativeLinkResolution: 'legacy'
-    })
+    RouterModule.forRoot(routes)
   ],
   exports: [RouterModule]
 })

@@ -1,0 +1,16 @@
+<div class="main-content-body main-content-body-contacts card custom-card">
+  <div class="main-contact-info-header pt-3">
+      <h5>Liste des user</h5>
+      <p class="text-muted">Gestion des différentes catégories de formation !</p>
+      <div class="main-contact-action btn-list pe-0 me-3">
+          <button class="btn btn-primary" >Ajouter une user <i class="fe fe-plus-circle"></i></button>
+          <!-- <button class="btn btn-primary" (click)="createCategorie()">Ajouter une catégorie <i class="fe fe-plus-circle"></i></button> -->
+      </div>
+  </div>
+  <div class="main-contact-info-body p-4">
+      <ng2-smart-table  [settings]="settings" [source]="source">
+      <!-- <ng2-smart-table (delete)="detailsCategory($event)"(custom)="deleteCategory($event)" (edit)="update($event)" [settings]="settings" [source]="source"> -->
+      </ng2-smart-table>
+  </div>
+  
+</div>

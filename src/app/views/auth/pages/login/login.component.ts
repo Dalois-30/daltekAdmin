@@ -70,9 +70,7 @@ export class LoginComponent implements OnInit {
         // console.log('user', user); 
         
         if(user.is_superuser) {
-          // const token = user.token_type + " " + result.access;
           if(this.authenticationService.saveToken(result.access)) this.router.navigateByUrl(this.returnUrl);
-          // console.log('token', token);
           
         }else {
           this.showToast('Warning', 'Your are not an administrator !', 'warning');

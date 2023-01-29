@@ -1,64 +1,71 @@
-<div class="bg-light min-vh-100 d-flex flex-row align-items-center">
-  <c-container>
-    <c-row class="justify-content-center">
-      <c-col md="8">
-        <c-card-group>
-          <c-card class="p-4">
-            <div class="card-body">
-              <h4 class="text-center form-label">Login</h4>
-              <form class="login-form mt-4" [formGroup]="loginForm" (ngSubmit)="login()">
-                  <div class="row">
-                      <div class="col-lg-12">
-                          <div class="mb-3">
-                              <label class="form-label">Your Email <span
-                                      class="text-danger">*</span></label>
-                              <div class="form-icon position-relative">
-                                  <!-- <i-feather name="user" class="fea icon-sm icons"></i-feather> -->
-                                  <input type="email" class="form-control" formControlName="email" placeholder="Email">
-                              </div>
-                          </div>
-                      </div>
-                      <!--end col-->
+<div class="vh-100 rounded d-flex align-items-center justify-content-around">
+    <div class="col-md-6 col-md-8 ">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-5 col-md-8">
+                    <div class="card login-page bg-light shadow rounded border-0">
+                        <div class="card-body">
+                            <h4 class="text-center form-label">Login</h4>
+                            <form class="login-form mt-4" [formGroup]="loginForm" (ngSubmit)="login()">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Your Email <span
+                                                    class="text-danger">*</span></label>
+                                            <div class="form-icon position-relative">
+                                                <!-- <i-feather name="user" class="fea icon-sm icons"></i-feather> -->
+                                                <input type="email" class="form-control" formControlName="email" placeholder="Email">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end col-->
 
-                      <div class="col-lg-12">
-                          <div class="mb-3">
-                              <label class="form-label">Password <span
-                                      class="text-danger">*</span></label>
-                              <div class="form-icon position-relative">
-                                  <!-- <i-feather name="key" class="fea icon-sm icons"></i-feather> -->
-                                  <input type="password" class="form-control" formControlName="password" placeholder="password">
-                              </div>
-                          </div>
-                      </div>
-                      <!--end col-->
+                                    <div class="col-lg-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Password <span
+                                                    class="text-danger">*</span></label>
+                                            <div class="form-icon position-relative">
+                                                <!-- <i-feather name="key" class="fea icon-sm icons"></i-feather> -->
+                                                <input type="password" class="form-control" formControlName="password" placeholder="password">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end col-->
 
-                      <div class="col-lg-12">
-                          <div class="d-flex justify-content-between">
-                              <div class="mb-3">
-                                  <div class="form-check">
-                                      <input class="form-check-input" type="checkbox" value=""
-                                          id="flexCheckDefault">
-                                      <label class="form-check-label" for="flexCheckDefault">Remember
-                                          me</label>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <!--end col-->
+                                    <div class="col-lg-12">
+                                        <div class="d-flex justify-content-between">
+                                            <div class="mb-3">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault">Remember
+                                                        me</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end col-->
 
-                      <div class="col-lg-12 mb-0">
-                          <div class="d-grid">
-                              <button class="btn btn-primary" [disabled]="loginForm.invalid" type="submit">Sing in</button>
-                          </div>
-                      </div>
-                      <!--end col-->
-                  </div>
-                  <!--end row-->
-              </form>
-          </div>
-          </c-card>
-        </c-card-group>
-      </c-col>
-    </c-row>
-  </c-container>
+                                    <div class="col-lg-12 mb-0">
+                                        <div class="d-grid">
+                                            <button class="btn btn-primary" [disabled]="loginForm.invalid" type="submit">Sing in</button>
+                                        </div>
+                                    </div>
+                                    <!--end col-->
+                                </div>
+                                <!--end row-->
+                            </form>
+                        </div>
+                    </div>
+                    <!---->
+                </div>
+                <!--end col-->
+            </div>
+            <!--end row-->
+        </div>
+        <!--end container-->
+    </div>
+    <!--end row-->
 </div>
+<!--end section-->
+<!-- Hero End -->
